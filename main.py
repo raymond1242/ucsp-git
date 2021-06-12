@@ -1,7 +1,13 @@
-def print_name(name):
-	print(f'My name is {name}')
+from os import listdir
+from os.path import isfile, join
+from characters import *
 
+characters_path = "./characters/"
+character_names = [fname[:-3] for fname in listdir(characters_path)
+                   if isfile(join(characters_path, fname))
+                   and not fname.startswith('_')
+                   and not fname.endswith('.pyc')]
 
-print('Hello, I am Raymond')
-print('Hello, I am Gareca too')
-print_name('Jose')
+for cname in character_names:
+    character = eval(cname + '.' + cname + "()")
+    character.SayName()
