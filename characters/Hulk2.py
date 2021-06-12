@@ -1,3 +1,3 @@
-class Hulk:
+class Hulk2:
     def SayName(self):
-        print("HULK aplasta")
+        print("HULK no aplasta")
